@@ -1,0 +1,181 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{alianPhotoplethysmography2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=11cde12ccb636dccbee76ddb81ff6518}{%
+           family={Alian},
+           familyi={A\bibinitperiod},
+           given={Aymen\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=65b50b5a7968cb067badafd66f3c5428}{%
+           family={Shelley},
+           familyi={S\bibinitperiod},
+           given={Kirk\bibnamedelima H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{062c01d22810fb5983a30dc822fac4cc}
+      \strng{fullhash}{062c01d22810fb5983a30dc822fac4cc}
+      \strng{bibnamehash}{062c01d22810fb5983a30dc822fac4cc}
+      \strng{authorbibnamehash}{062c01d22810fb5983a30dc822fac4cc}
+      \strng{authornamehash}{062c01d22810fb5983a30dc822fac4cc}
+      \strng{authorfullhash}{062c01d22810fb5983a30dc822fac4cc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The photoplethysmographic (PPG) waveform, also known as the pulse oximeter waveform, is one of the most commonly displayed clinical waveforms. First described in the 1930s, the technology behind the waveform is simple. The waveform, as displayed on the modern pulse oximeter, is an amplified and highly filtered measurement of light absorption by the local tissue over time. It is optimized by medical device manufacturers to accentuate its pulsatile components. Physiologically, it is the result of a complex, and not well understood, interaction between the cardiovascular, respiratory, and autonomic systems. All modern pulse oximeters extract and display the heart rate and oxygen saturation derived from the PPG measurements at multiple wavelengths. ``As is,'' the PPG is an excellent monitor for cardiac arrhythmia, particularly when used in conjunction with the electrocardiogram (ECG). With slight modifications in the display of the PPG (either to a strip chart recorder or slowed down on the monitor screen), the PPG can be used to measure the ventilator-induced modulations which have been associated with hypovolemia. Research efforts are under way to analyze the PPG using improved digital signal processing methods to develop new physiologic parameters. It is hoped that when these new physiologic parameters are combined with a more modern understanding of cardiovascular physiology (functional hemodynamics) the potential utility of the PPG will be expanded. The clinical researcher's objective is the use of the PPG to guide early goal-directed therapeutic interventions (fluid, vasopressors, and inotropes), in effect to extract from the simple PPG the information and therapeutic guidance that was previously only obtainable from an arterial pressure line and the pulmonary artery catheter.}
+      \field{issn}{1521-6896}
+      \field{journaltitle}{Best Practice \& Research Clinical Anaesthesiology}
+      \field{month}{12}
+      \field{number}{4}
+      \field{series}{Hemodynamic {{Monitoring Devices}}}
+      \field{title}{Photoplethysmography}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{28}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{395\bibrangedash 406}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.bpa.2014.08.006
+      \endverb
+      \verb{file}
+      \verb /home/netanel/snap/zotero-snap/common/Zotero/storage/CCZSZJTU/S1521689614000755.html
+      \endverb
+      \keyw{noninvasive cardiovascular monitor,pleth,PPG,pulse oximeter waveform}
+    \endentry
+    \entry{nathPhotoplethysmogramBasedNonInvasive2018}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ead2d8b0869cf9e3ef0d3ba197ef97c5}{%
+           family={Nath},
+           familyi={N\bibinitperiod},
+           given={Rajdeep\bibnamedelima Kumar},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=c10e4c23e1af15c6e09a79c8c836091d}{%
+           family={Thapliyal},
+           familyi={T\bibinitperiod},
+           given={Himanshu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b092c08678390f3326653a7f77964426}{%
+           family={{Caban-Holt}},
+           familyi={C\bibinitperiod},
+           given={Allison},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Hyderabad, India}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \strng{fullhash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \strng{bibnamehash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \strng{authorbibnamehash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \strng{authornamehash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \strng{authorfullhash}{cd2a878506ddbc48c8bdcaf77a2648c7}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A novel blood pressure classification model using Phototplethysmogram (PPG) is proposed in this work. The proposed model uses signal processing and machine learning algorithms to classify blood pressure in four stages: normal, elevated, stage 1 and stage 2. A total of 83 features were extracted from the PPG signal which includes 71 statistical features and 12 characteristic features. We have used random forest classifier to train and test our predictive model. The proposed method is evaluated on publicly available MIMIC database for 20 different individuals. The database contains raw PPG data for different users and Arterial Blood Pressure (ABP) to calculate the systolic and diastolic blood pressure to be used as the ground truth for training and validation purposes. We have achieved an overall accuracy of 90.8\% over the four classes of blood pressure levels. The results indicate that the proposed model will be ideal for integration into a non-invasive blood pressure monitoring system with significant accuracy.}
+      \field{booktitle}{2018 {{IEEE International Symposium}} on {{Smart Electronic Systems}} ({{iSES}}) ({{Formerly iNiS}})}
+      \field{isbn}{978-1-5386-9172-4}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{title}{Towards {{Photoplethysmogram Based Non-Invasive Blood Pressure Classification}}}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{37\bibrangedash 39}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1109/iSES.2018.00018
+      \endverb
+      \verb{file}
+      \verb /home/netanel/snap/zotero-snap/common/Zotero/storage/NBU6EI9C/Nath et al. - 2018 - Towards Photoplethysmogram Based Non-Invasive Bloo.pdf
+      \endverb
+    \endentry
+    \entry{pirzadaRemotePhotoplethysmographyRPPG2023}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=d3b34dc9683ee7b1f93ca6ce5c5c48de}{%
+           family={Pirzada},
+           familyi={P\bibinitperiod},
+           given={Pireh},
+           giveni={P\bibinitperiod}}}%
+        {{hash=94f3cf096c4b05dbd6be0b24ad9365ba}{%
+           family={Wilde},
+           familyi={W\bibinitperiod},
+           given={Adriana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a6a809912e0a9446eb4f38466c00dd74}{%
+           family={Doherty},
+           familyi={D\bibinitperiod},
+           given={Gayle\bibnamedelima H.},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=00ea9146a6e61e5a74e6464bafc9856f}{%
+           family={{Harris-Birtill}},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {medRxiv}%
+      }
+      \strng{namehash}{47c53bc38381d17138037847e2477873}
+      \strng{fullhash}{fa3dfe62e31f0304f8bffb72908f28cb}
+      \strng{bibnamehash}{47c53bc38381d17138037847e2477873}
+      \strng{authorbibnamehash}{47c53bc38381d17138037847e2477873}
+      \strng{authornamehash}{47c53bc38381d17138037847e2477873}
+      \strng{authorfullhash}{fa3dfe62e31f0304f8bffb72908f28cb}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Peripheral oxygen saturation (SpO2) and heart rate (HR) are critical physiological measures that clinicians need to observe to decide on an emergency intervention. These measures are typically determined using a contact-based pulse oximeter. This approach may pose difficulties in many cases, such as with young children, patients with burnt or sensitive skin, cognitive impairments, and those undergoing certain medical procedures or severe illnesses. Remote Photoplethysmography (rPPG) allows for unobtrusive sensing of these vital signs in a variety of settings for health monitoring systems. Several research studies have been conducted to use rPPG for this purpose; however, there is still not a commercially available, clinically validated system that overcomes the concerns highlighted in this paper. We present a state-of-the-art review of rPPG-related research conducted including related processes and techniques, such as regions of interest (ROI) selection, extracting the raw signal, pre-processing data, applying noise reduction algorithms, Fast Fourier transforms (FFT), filtering and extracting these vital signs. Further, we present a detailed, critical evaluation of available rPPG systems. Limitations and future directions have also been identified to aid rPPG researchers in further advancing this field.}
+      \field{eprinttype}{medRxiv}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shorttitle}{Remote {{Photoplethysmography}} ({{rPPG}})}
+      \field{title}{Remote {{Photoplethysmography}} ({{rPPG}}): {{A State-of-the-Art Review}}}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{2023.10.12.23296882}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1101/2023.10.12.23296882
+      \endverb
+      \verb{file}
+      \verb /home/netanel/snap/zotero-snap/common/Zotero/storage/VXD5PKY9/Pirzada et al. - 2023 - Remote Photoplethysmography (rPPG) A State-of-the.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

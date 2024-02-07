@@ -1,0 +1,15 @@
+[1] Config.pm:307> INFO - This is Biber 2.19
+[2] Config.pm:310> INFO - Logfile is 'proposal.blg'
+[180] biber:340> INFO - === Thu Feb  8, 2024, 00:39:09
+[208] Biber.pm:419> INFO - Reading 'proposal.bcf'
+[339] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[370] Biber.pm:4419> INFO - Processing section 0
+[385] Biber.pm:4610> INFO - Looking for bibtex file 'Image Processing Project.bib' for section 0
+[388] bibtex.pm:1713> INFO - LaTeX decoding ...
+[426] bibtex.pm:1519> INFO - Found BibTeX data source 'Image Processing Project.bib'
+[545] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[545] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[546] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[546] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[557] bbl.pm:660> INFO - Writing 'proposal.bbl' with encoding 'UTF-8'
+[563] bbl.pm:763> INFO - Output to proposal.bbl

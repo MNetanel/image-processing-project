@@ -1,0 +1,50 @@
+<mxfile host="65bd71144e">
+    <diagram id="7dnHX3goq04YVIGIMLpL" name="Page-1">
+        <mxGraphModel dx="727" dy="860" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="Input Data" style="swimlane;startSize=0;labelBackgroundColor=default;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="107" y="131" width="317" height="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Facial Videos" style="whiteSpace=wrap;html=1;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="5">
+                    <mxGeometry x="172" y="16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="True PPG Signal" style="whiteSpace=wrap;html=1;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="5">
+                    <mxGeometry x="21" y="16" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Evaluate" style="whiteSpace=wrap;html=1;labelBackgroundColor=default;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="279" y="535" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=elbowEdgeStyle;html=1;fontFamily=Latin Modern Math;fontSize=15;" edge="1" parent="1" source="6" target="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="164" y="314"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="" style="edgeStyle=elbowEdgeStyle;html=1;fontFamily=Latin Modern Math;fontSize=15;" edge="1" parent="1" source="12" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Video Preprocessing" style="whiteSpace=wrap;html=1;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="279" y="244" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=elbowEdgeStyle;html=1;fontFamily=Latin Modern Math;fontSize=15;" edge="1" parent="1" source="3" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=elbowEdgeStyle;html=1;fontFamily=Latin Modern Math;fontSize=15;" edge="1" parent="1" source="15" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Image Enhancement" style="whiteSpace=wrap;html=1;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="279" y="341" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=elbowEdgeStyle;html=1;fontSize=15;" edge="1" parent="1" source="17" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="PPG Signal Extraction Model" style="whiteSpace=wrap;html=1;labelBackgroundColor=default;fontFamily=Latin Modern Math;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="279" y="438" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
