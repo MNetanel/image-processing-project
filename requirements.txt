@@ -1,5 +1,7 @@
-numpy
-pandas
-matplotlib
+dlib
 h5py
+matplotlib
+numpy
 opencv-python-headless
+pandas
+tqdm
