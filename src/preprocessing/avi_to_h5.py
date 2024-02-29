@@ -5,10 +5,10 @@ import sys
 import re
 from pathlib import Path
 from tqdm import tqdm
+src = Path(__file__).parents[1]
+sys.path.append(str(src))
 
-sys.path.append(str(Path('.').absolute()))
-
-from config import RAW_DATA_DIR, PREPROCESSED_DATA_DIR
+from config import RAW_DATA_DIR, PREPROCESSED_DATA_DIR, SUBJECTS
 
 def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int) -> np.ndarray:
     path = str(filepath)
@@ -24,22 +24,17 @@ def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int
 
 def main():
     # Get list of files
-    dirs = [d for d in RAW_DATA_DIR.glob('*')]
-    files = []
-    for d in dirs:
-        file = d / f'{d.name}_edited.avi'
-        if not Path.exists(file):
-            file = d / f'{d.name}-edited.avi'
-        files.append(file)
-    files = [file for file in files if 'M' not in file.name]
+    files = [RAW_DATA_DIR / f'subject{subject}/vid.avi' for subject in SUBJECTS]
     
     # Convert each one to numpy
-    y_start, y_end, x_start, x_end= (650, 1000, 300, 750)
+    y_start, y_end, x_start, x_end= (0, 400, 200, 500)
     h5_file = h5py.File(str(PREPROCESSED_DATA_DIR / 'videos.h5'), 'w')
-    for file in tqdm(files):
-        condition_name = re.findall(r'.*(?=[_-]edited\.avi)', file.name)[0]
+    t = tqdm(files)
+    for file in t:
+        name = file.parent.name # Name of directory
+        t.set_postfix_str(name)
         frames = vid2numpy(file, y_start, y_end, x_start, x_end)
-        h5_file.create_dataset(name=condition_name,
+        h5_file.create_dataset(name=name,
                                 data=frames,
                                 compression='gzip',
                                 chunks=True)
