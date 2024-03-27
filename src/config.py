@@ -6,6 +6,5 @@ if system() == 'Linux':
 else:
     DATA_DIR = Path(r'D:\Image Processing Course Project\UBFC-RPPG')
 
-RAW_DATA_DIR = DATA_DIR / 'raw_data'
-PREPROCESSED_DATA_DIR = DATA_DIR / 'preprocessed_data'
-SUBJECTS = [1, 3, 4, 5, 8, 9, 10, 11, 12, 13]
+RAW_DATA_DIR = DATA_DIR / 'raw_data' / 'videos'
+PREPROCESSED_DATA_DIR = DATA_DIR / 'preprocessed_data' / 'videos'

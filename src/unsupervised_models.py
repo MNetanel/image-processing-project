@@ -329,7 +329,6 @@ def LGI(frames):
     bvp = bvp.reshape(-1)
     return bvp
 
-
 def ICA_POH(frames, FS):
     '''
     Non-contact, automated cardiac pulse measurements using video imaging and blind source separation.
@@ -378,7 +377,3 @@ def ICA_POH(frames, FS):
 
     BVP = BVP_F[0]
     return BVP
-
-
-
-

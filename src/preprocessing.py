@@ -1,11 +1,15 @@
-import sys
-from functools import reduce
-from pathlib import Path
-
-import cv2
+import h5py
 import numpy as np
-from skimage.measure import label, regionprops
+import cv2
+import sys
+import dlib
+from pathlib import Path
 from tqdm import tqdm
+from functools import reduce
+from skimage.measure import label, regionprops
+
+src = Path(__file__).parent
+sys.path.append(str(src))
 
 
 def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int) -> np.ndarray:
@@ -24,9 +28,12 @@ def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int
 
 def _get_frame_landmarks(frame: np.ndarray, detector, predictor):
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-    face = detector(gray)[0]
-    landmarks = predictor(gray, face)
-    return [(landmarks.part(i).x, landmarks.part(i).y) for i in range(81)]
+    faces = detector(gray)
+    if len(faces) > 0:
+        face = detector(gray)[0]
+        landmarks = predictor(gray, face)
+        return [(landmarks.part(i).x, landmarks.part(i).y) for i in range(81)]
+    return None
 
 
 def _get_or_generate_frame_forehead_landmarks(frame_landmarks: list[tuple]):
@@ -72,9 +79,10 @@ def get_forehead_landmarks_every_nth_frame(frames: np.ndarray, n: int, detector,
     landmarks = []
     for i in range(0, len(frames), n):
         frame_landmarks = _get_frame_landmarks(frames[i], detector, predictor)
-        frame_forehead_landmarks = _get_or_generate_frame_forehead_landmarks(
-            frame_landmarks)
-        for _ in range(n):
+        if frame_landmarks:
+            frame_forehead_landmarks = _get_or_generate_frame_forehead_landmarks(
+                frame_landmarks)
+        for _ in range(n):  # if not found, use from previous match
             landmarks.append(frame_forehead_landmarks)
     return np.array(landmarks)
 
@@ -106,3 +114,42 @@ def segment_forehead(frames: np.ndarray):
         masks.append(np.stack([mask] * 3, axis=-1))
     masks = np.array(masks)
     return frames * masks
+
+def preprocess_videos(raw_data_dir: Path, preprocessed_data_dir: Path):
+    # 1. AVI files to h5 file
+    files = [d / 'vid.avi' for d in raw_data_dir.glob('*')]
+    
+    # Convert each one to numpy
+    y_start, y_end, x_start, x_end= (0, 400, 200, 500)
+    h5_file = h5py.File(str(preprocessed_data_dir / 'videos_all.h5'), 'w')
+    t = tqdm(files)
+    for file in t:
+        name = file.parent.name # Name of directory
+        t.set_postfix_str(name)
+        frames = vid2numpy(file, y_start, y_end, x_start, x_end)
+        h5_file.create_dataset(name=name,
+                                data=frames,
+                                compression='gzip',
+                                chunks=True)
+    h5_file.close()
+    
+    
+    # 2. segment foreheads in h5 file
+    predictor_path = str(src / 'external_utils/shape_predictor_81_face_landmarks.dat')
+    face_detector = dlib.get_frontal_face_detector()
+    landmark_predictor = dlib.shape_predictor(predictor_path)
+    h5_in = h5py.File(preprocessed_data_dir / 'videos_all.h5')
+    h5_out = h5py.File(preprocessed_data_dir / 'foreheads_all.h5', 'w')
+    
+    t = tqdm(h5_in.keys())
+    for key in t:
+        t.set_postfix_str(key)
+        frames = np.array(h5_in[key])
+        forehead_landmarks = get_forehead_landmarks_every_nth_frame(frames, 10, face_detector, landmark_predictor)
+        cropped_frames = crop_frames_by_landmarks(frames, forehead_landmarks)
+        forehead_frames = segment_forehead(cropped_frames)
+        print(forehead_frames.shape)
+        h5_out.create_dataset(name=key,
+                              data=forehead_frames,
+                              compression='gzip')
+
