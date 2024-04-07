@@ -1,3 +1,9 @@
+'''
+Implementation of various postprocessing methods for processing rPPG signals.
+SOURCE: rPPG-Toolbox https://github.com/ubicomplab/rPPG-Toolbox/
+See LICENSE.txt for license.
+'''
+
 import numpy as np
 import scipy
 from scipy import sparse

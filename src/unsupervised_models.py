@@ -1,3 +1,8 @@
+'''
+Implementation of various unsupervised rPPG models.
+SOURCE: rPPG-Toolbox https://github.com/ubicomplab/rPPG-Toolbox/
+See LICENSE.txt for license.
+'''
 import math
 
 import numpy as np
@@ -5,10 +10,6 @@ from scipy import linalg, signal, sparse
 from skimage.util import img_as_float
 from sklearn.metrics import mean_squared_error
 
-#############################################################
-# SOURCE: rPPG-Toolbox
-# https://github.com/ubicomplab/rPPG-Toolbox/
-############################################################
 
 
 def _detrend(input_signal, lambda_value):

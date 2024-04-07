@@ -13,6 +13,20 @@ sys.path.append(str(src))
 
 
 def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int) -> np.ndarray:
+    '''
+    Convert a video file to a numpy array of frames.
+
+    Args:
+        filepath (Path): The path to the video file.
+        y_start (int): The starting y-coordinate for cropping the frames.
+        y_end (int): The ending y-coordinate for cropping the frames.
+        x_start (int): The starting x-coordinate for cropping the frames.
+        x_end (int): The ending x-coordinate for cropping the frames.
+
+    Returns:
+        np.ndarray: The numpy array of frames.
+
+    '''
     path = str(filepath)
     cap = cv2.VideoCapture(path)
     frames = []
@@ -27,6 +41,18 @@ def vid2numpy(filepath: Path, y_start: int, y_end: int, x_start: int, x_end: int
 
 
 def _get_frame_landmarks(frame: np.ndarray, detector, predictor):
+    '''
+    Get the facial landmarks in `frame`.
+
+    Args:
+        frame (np.ndarray): The input frame.
+        detector: The face detector.
+        predictor: The landmark predictor.
+
+    Returns:
+        list: A list of tuples representing the (x, y) coordinates of the landmarks.
+        None: If no face is detected in the frame.
+    '''
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
     faces = detector(gray)
     if len(faces) > 0:
@@ -37,6 +63,15 @@ def _get_frame_landmarks(frame: np.ndarray, detector, predictor):
 
 
 def _get_or_generate_frame_forehead_landmarks(frame_landmarks: list[tuple]):
+    '''
+    Get or generate forehead landmarks based on the given frame facial landmarks.
+
+    Args:
+        frame_landmarks (list[tuple]): List of facial landmarks for the frame.
+
+    Returns:
+        list[tuple]: List of forehead landmarks.
+    '''
     forehead_landmarks = []
     forehead_lst = [(79, 74), 79, 73, 72, 69, 76, (76, 75), (75, 74)]
     for lm in forehead_lst:
@@ -50,7 +85,17 @@ def _get_or_generate_frame_forehead_landmarks(frame_landmarks: list[tuple]):
     return forehead_landmarks
 
 
-def _get_kovac_mask_for_frame(frame):
+def _get_kovac_mask_for_frame(frame: np.ndarray):
+    '''
+    Get a threshold-based segmentation mask for skin regions.
+    Based on Kovac et al. (2003)
+
+    Args:
+        frame (np.ndarray): The frame on which to perform the masking.
+
+    Returns:
+        np.ndarray: The masked frame.
+    '''
     R, G, B = frame.transpose(2, 0, 1)
     masks = [
         R > 95,
@@ -64,7 +109,16 @@ def _get_kovac_mask_for_frame(frame):
     return reduce(np.bitwise_and, masks).astype(np.uint8)
 
 
-def _get_largest_area_in_mask(mask):
+def _get_largest_area_in_mask(mask: np.ndarray):
+    '''
+    Get the largest connected area in a binary mask (used to clean "noisy" masks).
+
+    Parameters:
+        mask (np.ndarray): Binary mask representing the areas of interest.
+
+    Returns:
+        np.ndarray: Binary mask with only the largest connected area.
+    '''
     rps = regionprops(label(mask))
     coords = rps[np.argmax([r.area for r in rps])].coords.T
     out = np.zeros_like(mask)
@@ -76,6 +130,18 @@ def _get_largest_area_in_mask(mask):
 # FUNCTIONS THAT OPERATE ON A BATCH OF FRAMES
 
 def get_forehead_landmarks_every_nth_frame(frames: np.ndarray, n: int, detector, predictor):
+    '''
+    Get or generate forehead landmarks on every `n`th frame.
+
+    Args:
+        frames (np.ndarray): The frames to get the landmarks of.
+        n (int): Number of frames to skip.
+        detector: Dace detector.
+        predictor: Shape predictor.
+
+    Returns:
+        np.ndarray: An array containing the forehead landmarks.
+    '''
     landmarks = []
     for i in range(0, len(frames), n):
         frame_landmarks = _get_frame_landmarks(frames[i], detector, predictor)
@@ -88,6 +154,17 @@ def get_forehead_landmarks_every_nth_frame(frames: np.ndarray, n: int, detector,
 
 
 def crop_frames_by_landmarks(frames: np.ndarray, landmarks: np.ndarray) -> np.ndarray:
+    '''
+    Crop frames based on landmarks.
+
+    Args:
+        frames (np.ndarray): Array of frames.
+        landmarks (np.ndarray): Array of landmarks corresponding to each frame.
+
+    Returns:
+        np.ndarray: Array of cropped frames.
+
+    '''
     masked_frames = []
     for i, frame in enumerate(frames):
         frame_mask = np.zeros_like(frame)
@@ -107,6 +184,16 @@ def crop_frames_by_landmarks(frames: np.ndarray, landmarks: np.ndarray) -> np.nd
 
 
 def segment_forehead(frames: np.ndarray):
+    '''
+    Segment the forehead region from `frames` using a threshold-based segmentation mask
+    for skin regions. Based on Kovac et al. (2003).
+
+    Args:
+        frames (np.ndarray): The frames to extract the forehead area from.
+
+    Returns:
+        np.ndarray: Masked/segmented frames.
+    '''
     masks = []
     for frame in frames:
         kovac = _get_kovac_mask_for_frame(frame)
