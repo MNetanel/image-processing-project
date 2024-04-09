@@ -7,7 +7,7 @@ Our research question is: can image enhancement techniques improve the performan
 
 # Instructions
 1. Navigate to the project folder and install the dependencies using `pip install -r requirements.txt`.
-2. In `setup.py` replace the `RAW_DATA_DIR` to the directory containing the videos from  the UBF-rPPG dataset, the `GT_DATA_DIR` to the directory containing the ground truth signals, and the `PREPROCESSED_DATA_DIR` to the desired directory to save the processed data.
+2. In `setup.py` replace the `RAW_DATA_DIR` to the directory containing the videos from  the UBF-rPPG dataset, the `GT_DATA_DIR` to the directory containing the ground truth signals, the `PREPROCESSED_DATA_DIR` to the desired directory to save the processed data, and the `OUTPUT_DATA_DIR` to the desired directory to save the final results.
 3. Run `main.py`.
 
 # Licenses
