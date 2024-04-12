@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber proposal"] 1707398206 "proposal.bcf" "proposal.bbl" "proposal" 1707398213 0
-  "proposal.bcf" 1707398213 108172 e5bd3d4b3937b248604a1c573be869e6 "pdflatex"
+["biber proposal"] 1707398206 "proposal.bcf" "proposal.bbl" "proposal" 1712916474 0
+  "proposal.bcf" 1712916474 108172 e5bd3d4b3937b248604a1c573be869e6 "pdflatex"
   (generated)
   "proposal.bbl"
   "proposal.blg"
   (rewritten before read)
-["pdflatex"] 1707398211 "/home/netanel/Documents/code/image-processing-project/reports/proposal/proposal.tex" "proposal.pdf" "proposal" 1707398213 0
+["pdflatex"] 1712916472 "/home/netanel/Documents/code/image-processing-project/documents/reports/proposal/proposal.tex" "proposal.pdf" "proposal" 1712916474 0
   "/etc/texmf/web2c/texmf.cnf" 1707254585 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/netanel/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1707256245 11524 1eec8dafb5df1ba9847ddb657fe49d83 ""
-  "/home/netanel/Documents/code/image-processing-project/reports/proposal/proposal.tex" 1707398203 4582 13516f2ba24ea66554ed80539783b133 ""
+  "/home/netanel/Documents/code/image-processing-project/documents/reports/proposal/proposal.tex" 1712916472 4562 2368b0b27718ef3cd7b343100984b0b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -130,14 +130,14 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1707254726 128028 f533b797fba58d231669ea19e894e23e ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1707254740 6494426 34cda7e8c3fe9a98bfe7aa94b9af7870 ""
-  "figures/A-typical-PPG-signal-and-its-components.png" 1707346260 54103 c3f130935a1232ab358c7f22a050a594 ""
-  "figures/flowchart.png" 1707346260 25706 0607a817c61cccd45bb3de47153cb671 ""
-  "proposal.aux" 1707398213 2088 1b473830cf2485484749270fb541c4f5 "pdflatex"
-  "proposal.bbl" 1707398207 10972 fefbe61ad057a3f932ae91bc9374e6c5 "biber proposal"
-  "proposal.out" 1707398213 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "proposal.run.xml" 1707398213 2347 774b4235dc84ab7546b6e7387dcfd6e4 "pdflatex"
-  "proposal.tex" 1707398203 4582 13516f2ba24ea66554ed80539783b133 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710493631 6494436 3f199c0f1c76247c4803710b1a9ec4b1 ""
+  "figures/A-typical-PPG-signal-and-its-components.png" 1712494603 54103 c3f130935a1232ab358c7f22a050a594 ""
+  "figures/flowchart.png" 1712494603 25706 0607a817c61cccd45bb3de47153cb671 ""
+  "proposal.aux" 1712916474 2088 1b473830cf2485484749270fb541c4f5 "pdflatex"
+  "proposal.bbl" 1712494603 10972 fefbe61ad057a3f932ae91bc9374e6c5 "biber proposal"
+  "proposal.out" 1712916473 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "proposal.run.xml" 1712916474 2347 774b4235dc84ab7546b6e7387dcfd6e4 "pdflatex"
+  "proposal.tex" 1712916472 4562 2368b0b27718ef3cd7b343100984b0b0 ""
   (generated)
   "proposal.aux"
   "proposal.bcf"
